@@ -35,31 +35,28 @@ class AppService:
 
     
     def __init__(self):
-        self.tasksJSON = json.dumps(self.tasks)
+        pass
 
     def get_tasks(self):
-        return self.tasksJSON
+        return self.tasks
 
     def create_task(self,task):
-        tasksData = json.loads(self.tasksJSON)
-        tasksData.append(task)
-        self.tasksJSON = json.dumps(tasksData)
-        return self.tasksJSON
+        task['id'] = int(task['id'])
+        self.tasks.append(task)
+        return self.tasks
 
     def update_task(self, request_task):
-        tasksData = json.loads(self.tasksJSON)
-        for task in tasksData:
+        for task in self.tasks:
             if task["id"] == request_task['id']:
                 task.update(request_task)
-                return json.dumps(tasksData);
-        return json.dumps({'message': 'task id not found'});
+                return self.tasks;
+        return {'message': 'id de tâche non trouvé'}
 
     def delete_task(self, request_task_id):
-        tasksData = json.loads(self.tasksJSON)
-        for task in tasksData:
+        for task in self.tasks:
             if task["id"] == request_task_id:
-                tasksData.remove(task)
-                return json.dumps(tasksData);
-        return json.dumps({'message': 'task id not found'});
+                self.tasks.remove(task)
+                return self.tasks
+        return {'message': 'id de tâche non trouvé'}
 
     
