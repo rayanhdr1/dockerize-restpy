@@ -11,7 +11,7 @@ En format dictionnaire Python on aurait par exemple quelque chose comme ceci `{'
 Dans cette version initiale la liste des tâches est mémorisé dans une liste interne
 
 Nous allons utilisé une architecture tel que celle ci.
-![Archi](imgs\archi.png)
+![Archi](https://github.com/ISSAE/dockerize-restpy/raw/main/imgs/archi.png)
 On utilise une interface service pour accedes aux resources, une interface service CRUD
 
 
