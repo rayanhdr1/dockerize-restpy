@@ -1,5 +1,7 @@
 # python-flask-restapi
 
+ref complémentaire : https://flask.palletsprojects.com/en/1.1.x/quickstart/
+
 
 Exemple de projet sur la façon de développer une API RESTful avec Flask et Python avec Docker
 
